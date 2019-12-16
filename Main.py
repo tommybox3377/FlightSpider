@@ -12,12 +12,12 @@ def create_session(rtn, origin, destination, depart):
     payload = f"inboundDate={rtn}&country=US&currency=USD&locale=en-US&originPlace={origin}-sky&destinationPlace={destination}-sky&outboundDate={depart}&adults={tv.adults}"
     headers = {
         'x-rapidapi-host': "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-        'x-rapidapi-key': "key",
+        'x-rapidapi-key': "79b37e4f99msh2eef4fcf90870e0p1a5643jsnc33bc47effeb",
         'content-type': "application/x-www-form-urlencoded"
     }
 
     response = requests.request("POST", url, data=payload, headers=headers)
-
+    print(response)
     return response.headers["Location"]
 
 
@@ -49,7 +49,7 @@ def poll_session(key):
 
     headers = {
         'x-rapidapi-host': "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-        'x-rapidapi-key': "79b37e4f99msh2eef4fcf90870e0p1a5643jsnc33bc47effeb"
+        'x-rapidapi-key': ""
     }
     print(url)
     response = requests.request("GET", url, headers=headers, params=querystring)
